@@ -1,0 +1,11 @@
+- name: Install Prometheus Operator
+  script: template/install-prometheus.sh
+
+- name: Delete pre-configured alert rules
+  script: template/delete-rules.sh
+
+- name: Add pods alert rule
+  script: template/pods-alert.sh
+
+- name: Add alert manager configuration
+  script: template/alertmanager-conf.sh

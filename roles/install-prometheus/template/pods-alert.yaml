@@ -1,0 +1,22 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+    app: alertmanager
+    chart: alertmanager-0.1.7
+    heritage: Tiller
+    prometheus: kube-prometheus
+    release: kube-prometheus
+  name: kube-prometheus-pod-alerts
+  namespace: monitoring
+spec:
+  groups:
+  - name: alertmanager.rules
+    rules:
+    - alert: PodsHighCPU
+      annotations:
+        summary: The {{ $labels.container_name }} high CPU usage. CPU usage is {{ humanize $value }}%.
+      expr: sum by (container_name)(irate(container_cpu_usage_seconds_total{image!="",container_name!="POD"}[1m])) *100 > 1
+      for: 1m
+      labels:
+        severity: critical

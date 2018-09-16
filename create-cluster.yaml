@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  connection: local
+  roles:
+  - create-bucket
+  - create-cluster
+  - install-helm
+  - install-metrics-server
+  - install-prometheus

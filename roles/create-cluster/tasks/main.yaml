@@ -1,0 +1,5 @@
+- name: Create Cluster
+  script: template/create-cluster.sh
+
+- name: Validate Cluster
+  script: template/validate-cluster.sh

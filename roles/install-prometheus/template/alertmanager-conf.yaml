@@ -1,0 +1,14 @@
+apiVersion: v1
+data:
+  alertmanager.yaml: Z2xvYmFsOgogIHJlc29sdmVfdGltZW91dDogNW0KICBzbXRwX3NtYXJ0aG9zdDogbG9jYWxob3N0OjI1CiAgc210cF9mcm9tOiBhbGVydG1hbmFnZXJAYWxlcnQuY29tCiAgc210cF9hdXRoX3VzZXJuYW1lOiB1c2VybmFtZQogIHNtdHBfYXV0aF9wYXNzd29yZDogcGFzc3dvcmQKcm91dGU6CiAgcmVjZWl2ZXI6IGFsZXJ0CiAgZ3JvdXBfYnk6CiAgLSBhbGVydG5hbWUKICAtIG5vZGUKICAtIGNvbnRhaW5lcl9uYW1lCiAgZ3JvdXBfd2FpdDogMzBzCiAgZ3JvdXBfaW50ZXJ2YWw6IDVtCiAgcmVwZWF0X2ludGVydmFsOiAzaApyZWNlaXZlcnM6Ci0gbmFtZTogYWxlcnQKICBlbWFpbF9jb25maWdzOgogIC0gdG86IHJlc3BvbnNpYmxlQHBlcnNvbi5jb20KICB3ZWJob29rX2NvbmZpZ3M6CiAgLSB1cmw6IGh0dHBzOi8vaGF6ZWxjYXN0LWNsb3VkLWNoYWxsZW5nZS5oZXJva3VhcHAuY29tL2NoYWxsZW5nZV9ldmVudHM=
+kind: Secret
+metadata:
+  labels:
+    alertmanager: kube-prometheus
+    app: alertmanager
+    chart: alertmanager-0.1.7
+    heritage: Tiller
+    release: kube-prometheus
+  name: alertmanager-kube-prometheus
+  namespace: monitoring
+type: Opaque

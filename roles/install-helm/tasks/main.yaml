@@ -1,0 +1,2 @@
+- name: Install Helm for K8s Cluster
+  script: template/install-helm.sh

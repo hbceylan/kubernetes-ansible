@@ -1,0 +1,2 @@
+- name: Delete Bucket
+  script: template/delete-bucket.sh
